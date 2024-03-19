@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portlords chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #666;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #444;
+        }
+        #message-input {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px 0 0 5px;
+            margin-right: -4px;
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+        }
+        #send-button {
+            width: 80px;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 0 5px 5px 0;
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #username-input {
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #555;
+            color: #fff;
+        }
+        #color-picker {
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #555;
+            color: #fff;
+        }
+        #server-select {
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #555;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>breach bot chat</h1>
+
+    <input type="text" id="username-input" placeholder="Enter username">
+    <input type="color" id="color-picker" value="#333333">
+    <select id="server-select">
+        <option value="server1">Server 1</option>
+        <option value="server2">Server 2</option>
+        <option value="server3">Server 3</option>
+    </select>
+
+    <div id="chat-box"></div>
+
+    <input type="text" id="message-input" placeholder="Type your message here">
+    <button id="send-button">Send</button>
+</div>
+
+<script>
+    document.getElementById('send-button').addEventListener('click', function() {
+        var username = document.getElementById('username-input').value || 'Guest';
+        var color = document.getElementById('color-picker').value;
+        var server = document.getElementById('server-select').value;
+        var message = document.getElementById('message-input').value;
+
+        var chatBox = document.getElementById('chat-box');
+        var messageElement = document.createElement('div');
+        messageElement.style.color = color;
+        messageElement.textContent = username + ': ' + message + ' (Server: ' + server + ')';
+        chatBox.appendChild(messageElement);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        document.getElementById('message-input').value = '';
+    });
+</script>
+
+</body>
+</html>

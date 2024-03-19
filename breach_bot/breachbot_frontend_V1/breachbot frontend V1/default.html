@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Page - BreachBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('serial.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+            min-height: 100vh; 
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: rgba(51, 51, 51, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            min-height: calc(100vh - 240px); 
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-container {
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+        .default-button,
+        .panel-access-button,
+        .chat-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px; 
+        }
+        .default-button:hover,
+        .panel-access-button:hover,
+        .chat-button:hover {
+            background-color: #666;
+        }
+        .server-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .server-option {
+            background-color: #555;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to BreachBot Default Page</h1>
+
+    <div class="button-container">
+        <a href="chat.html" class="chat-button">Chat</a>
+        <a href="dashboard.html" class="default-button">Dashboard</a>
+        <a href="panel.html" class="panel-access-button">Panel Access</a>
+    </div>
+
+    <ul class="server-list">
+        <li class="server-option">Russia (IP: 185.139.2.42)</li>
+        <li class="server-option">United States (IP: 104.238.97.215)</li>
+        <li class="server-option">China (IP: 101.36.123.88)</li>
+        <li class="server-option">Germany (IP: 144.76.55.53)</li>
+        <li class="server-option">France (IP: 163.172.14.141)</li>
+        <li class="server-option">United Kingdom (IP: 51.38.64.239)</li>
+        <li class="server-option">Netherlands (IP: 95.179.140.24)</li>
+        <li class="server-option">Canada (IP: 158.69.226.64)</li>
+        <li class="server-option">Japan (IP: 133.130.100.162)</li>
+        <li class="server-option">Australia (IP: 101.0.89.106)</li>
+        <li class="server-option">Brazil (IP: 200.98.247.35)</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

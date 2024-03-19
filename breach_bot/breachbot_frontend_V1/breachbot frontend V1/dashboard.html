@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard BreachBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            cursor: crosshair;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            position: relative; 
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .record-count {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-panel {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-input {
+            width: calc(70% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+        }
+        .search-button {
+            width: calc(100% - 10px);
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .search-button:hover {
+            background-color: #666;
+        }
+        .server-options {
+            width: calc(70% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+        }
+        .server-options-label {
+            width: 30%;
+            text-align: right;
+            margin-right: 10px;
+            padding-top: 10px;
+        }
+        .wallet-button {
+            position: absolute;
+            top: 20px; 
+            right: 20px; 
+            padding: 10px 20px;
+            border: 2px solid #fff; 
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .wallet-button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to BreachBot Dashboard</h1>
+
+    <div class="search-panel">
+        <div style="flex-basis: 100%;">
+            <h2>Search</h2>
+            <input type="text" class="search-input" placeholder="Username">
+            <input type="password" class="search-input" placeholder="Password">
+            <input type="email" class="search-input" placeholder="Email">
+            <input type="tel" class="search-input" placeholder="Phone Number">
+            <input type="text" class="search-input" placeholder="Social Security Number">
+            <input type="text" class="search-input" placeholder="ID Number">
+            <input type="text" class="search-input" placeholder="First Name">
+            <input type="text" class="search-input" placeholder="Last Name">
+        </div>
+        <div style="flex-basis: 100%;">
+            <label for="server-options" class="server-options-label">Server Options:</label>
+            <select id="server-options" class="server-options">
+                <option value="all">Use All Servers</option>
+                <option value="russia">Russia (IP: 185.139.2.42)</option>
+                <option value="us">United States (IP: 104.238.97.215)</option>
+                <option value="china">China (IP: 101.36.123.88)</option>
+                <option value="germany">Germany (IP: 144.76.55.53)</option>
+                <option value="france">France (IP: 163.172.14.141)</option>
+                <option value="uk">United Kingdom (IP: 51.38.64.239)</option>
+                <option value="netherlands">Netherlands (IP: 95.179.140.24)</option>
+                <option value="canada">Canada (IP: 158.69.226.64)</option>
+                <option value="japan">Japan (IP: 133.130.100.162)</option>
+                <option value="australia">Australia (IP: 101.0.89.106)</option>
+                <option value="brazil">Brazil (IP: 200.98.247.35)</option>
+            </select>
+        </div>
+        <button class="search-button">Search</button>
+    </div>
+
+    <a href="wallet.html" class="wallet-button">Wallet</a>
+
+    <div class="record-count">
+        <h2>Record Count: 19,239,377,332</h2>
+    </div>
+</div>
+
+</body>
+</html>

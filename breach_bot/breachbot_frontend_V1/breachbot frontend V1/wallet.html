@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - BreachBot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .wallet-info {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 5px;
+            overflow: auto;
+            max-height: 200px;
+        }
+        .transaction-history {
+            margin-top: 40px;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .transaction {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Your Wallet</h1>
+
+    <div class="wallet-info" id="walletInfo">
+        <h2>Bitcoin Wallet Address</h2>
+        <p>1ABCxyz2ABCxyz3ABCxyz4ABCxyz5ABCxyz</p>
+        <h2>Balance</h2>
+        <p id="bitcoinBalance">Bitcoin: 0.789 BTC</p>
+        <p id="usdBalance">USD: $135,233</p>
+    </div>
+
+    <div class="transaction-history" id="transactionHistory">
+        <h2>Transaction History</h2>
+    </div>
+</div>
+
+<script>
+    let bitcoinBalance = 0.789;
+    let usdBalance = 135233;
+
+    function generateRandomUsername() {
+        const usernames = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Henry", "Ivy", "Jack"];
+        return usernames[Math.floor(Math.random() * usernames.length)];
+    }
+
+    function generateRandomAmount(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function appendTransaction() {
+        const transactionHistory = document.getElementById("transactionHistory");
+        const newTransaction = document.createElement("div");
+        const amount = generateRandomAmount(1000, 10000);
+        const username = generateRandomUsername();
+        newTransaction.innerHTML = `<p>New deposit: +$${amount} from ${username}</p><p>Date: ${new Date().toLocaleString()}</p>`;
+        transactionHistory.insertBefore(newTransaction, transactionHistory.firstChild);
+        
+        bitcoinBalance += (amount / 40000); 
+        usdBalance += amount;
+        
+        document.getElementById("bitcoinBalance").textContent = `Bitcoin: ${bitcoinBalance.toFixed(3)} BTC`;
+        document.getElementById("usdBalance").textContent = `USD: $${usdBalance.toLocaleString()}`;
+    }
+
+    for (let i = 0; i < 50; i++) {
+        setTimeout(appendTransaction, i * 10000);
+    }
+</script>
+
+</body>
+</html>
